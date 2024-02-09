@@ -16,6 +16,8 @@ class RegisterScreenBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       child: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.0.sp),
+
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
