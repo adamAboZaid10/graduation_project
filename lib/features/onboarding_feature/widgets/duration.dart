@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/onboarding_feature/controller/onboarding_controller.dart';
 import 'package:graduation_final_project/features/onboarding_feature/data/onboarding_data.dart';
 
@@ -26,8 +27,8 @@ class _DurationOnBoardingState extends State<DurationOnBoarding> {
                           height: 6,
                           decoration: BoxDecoration(
                               color: controller.currentpage != index
-                                  ? const Color.fromARGB(255, 187, 187, 187)
-                                  : const Color.fromARGB(255, 139, 241, 255),
+                                  ? secondcolor
+                                  : primaryColor,
                               borderRadius: BorderRadius.circular(10)),
                         ))
               ],

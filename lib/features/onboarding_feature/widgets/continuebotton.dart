@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/onboarding_feature/controller/onboarding_controller.dart';
 
 class ContinueBottonOnboarding extends GetView<OnBoardingControllerIMP> {
@@ -25,7 +26,7 @@ class ContinueBottonOnboarding extends GetView<OnBoardingControllerIMP> {
               onPressed: () {
                 controller.next();
               },
-              color: const Color.fromARGB(255, 124, 229, 243),
+              color: primaryColor,
               child: const Text(
                 "Continue",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),

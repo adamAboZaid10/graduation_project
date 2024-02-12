@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:graduation_final_project/core/servicies/servicies.dart';
 import 'package:graduation_final_project/features/onboarding_feature/screen/onboarding_screen.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await initialServices();
+void main() {
   runApp(const MyApp());
 }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/onboarding_feature/controller/onboarding_controller.dart';
 import 'package:graduation_final_project/features/onboarding_feature/widgets/continuebotton.dart';
 import 'package:graduation_final_project/features/onboarding_feature/widgets/onboardingviwe.dart';
@@ -19,7 +20,7 @@ class Onboarding extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             height: height * 0.1,
             width: double.infinity,
-            color: const Color.fromARGB(255, 124, 229, 243),
+            color: primaryColor,
             child: Container(
               height: 15,
               decoration: BoxDecoration(
