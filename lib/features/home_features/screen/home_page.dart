@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/component/custom_default_button.dart';
+import '../widgets/carousal_slider.dart';
+import '../widgets/search_bar.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -8,14 +12,54 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List images = [
+    "assets/image/facebooklogo.png",
+    "assets/image/onboarding1.jpg",
+    "assets/image/onboarding2.jpg",
+    "assets/image/onboarding3.jpg",
+    "assets/image/onboarding4.jpg"
+  ];
   @override
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: media.width,
-        height: media.height,
-        color: Colors.green,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+            width: media.width,
+            height: media.height,
+            color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: media.width - (media.width - 20),
+                  vertical: media.width - (media.width - 20)),
+              child: Column(
+                children: [
+                  searchDelegate(context),
+                  SizedBox(
+                    height: media.height - (media.height * (95 / 100)),
+                  ),
+                  carouselSlider(context, images),
+                  SizedBox(
+                    height: media.height - (media.height * (91 / 100)),
+                  ),
+                  CustomDefaultButton(
+                    onPressed: () {
+                      print("media height ${media.height}");
+                      print("media width ${media.width}");
+                    },
+                    color: Colors.black38,
+                    text: 'Choose Test',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28,
+                    width: media.width - (media.width * (25 / 100)),
+                    radius: media.width - (media.width * (95 / 100)),
+                    height: media.height - (media.height * (92 / 100)),
+                    textColor: Colors.white,
+                  ),
+                ],
+              ),
+            )),
       ),
     );
   }
