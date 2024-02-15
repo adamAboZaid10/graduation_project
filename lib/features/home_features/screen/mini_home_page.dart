@@ -47,14 +47,13 @@ class _MainTabViewState extends State<MainTabView> {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Colors.blue.withOpacity(0.3),
+          color: Colors.grey.withOpacity(0.5),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               tabBarView(
                   onTap: () {
-                    selected == 0 ? color = Colors.red : color.blue;
                     selected = 0;
                     if (mounted) {
                       setState(() {});
@@ -63,12 +62,13 @@ class _MainTabViewState extends State<MainTabView> {
                     print("#####$selected");
                   },
                   isActive: selected == 0,
-                  //selectedIcon: "assets/images/home_tab_select.png",
                   context: context,
                   widget: Icon(
                     Icons.home,
                     size: selected == 0 ? 45 : 35,
-                    color: selected == 0 ? Colors.red : Colors.black,
+                    color: selected == 0
+                        ? Colors.blue.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.5),
                   )),
               tabBarView(
                   onTap: () {
@@ -83,7 +83,9 @@ class _MainTabViewState extends State<MainTabView> {
                   widget: Icon(
                     Icons.chat,
                     size: selected == 1 ? 45 : 35,
-                    color: selected == 1 ? Colors.red : Colors.black,
+                    color: selected == 1
+                        ? Colors.blue.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.5),
                   )),
               SizedBox(
                 width: media.width - (media.width - 10),
@@ -101,7 +103,9 @@ class _MainTabViewState extends State<MainTabView> {
                   widget: Icon(
                     Icons.person,
                     size: selected == 2 ? 45 : 35,
-                    color: selected == 2 ? Colors.red : Colors.black,
+                    color: selected == 2
+                        ? Colors.blue.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.5),
                   )),
               tabBarView(
                   onTap: () {
@@ -116,7 +120,9 @@ class _MainTabViewState extends State<MainTabView> {
                   widget: Icon(
                     Icons.notification_add,
                     size: selected == 3 ? 45 : 35,
-                    color: selected == 3 ? Colors.red : Colors.black,
+                    color: selected == 3
+                        ? Colors.blue.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.5),
                   )),
             ],
           ),
