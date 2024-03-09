@@ -1,6 +1,5 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
+import 'package:graduation_final_project/features/home_features/screen/choose_test_screen.dart';
 
 import '../../../core/component/custom_default_button.dart';
 import '../widgets/carousal_slider.dart';
@@ -21,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     "assets/image/onboarding3.jpg",
     "assets/image/onboarding4.jpg"
   ];
+
   @override
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
@@ -48,7 +48,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                     CustomDefaultButton(
                       onPressed: () {
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ChooseTestScreen()));
                       },
                       color: Colors.black38,
                       text: 'Choose Test',
