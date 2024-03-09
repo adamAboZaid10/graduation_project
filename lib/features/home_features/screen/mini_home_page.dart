@@ -118,7 +118,7 @@ class _MainTabViewState extends State<MainTabView> {
                   isActive: selected == 3,
                   context: context,
                   widget: Icon(
-                    Icons.notification_add,
+                    Icons.settings,
                     size: selected == 3 ? 45 : 35,
                     color: selected == 3
                         ? Colors.blue.withOpacity(0.7)
