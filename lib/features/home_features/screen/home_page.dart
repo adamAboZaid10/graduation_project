@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 
 import '../../../core/component/custom_default_button.dart';
@@ -25,41 +27,42 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Container(
-            width: media.width,
-            height: media.height,
-            color: Colors.white,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: media.width - (media.width - 20),
-                  vertical: media.width - (media.width - 20)),
-              child: Column(
-                children: [
-                  searchDelegate(context),
-                  SizedBox(
-                    height: media.height - (media.height * (95 / 100)),
-                  ),
-                  carouselSlider(context, images),
-                  SizedBox(
-                    height: media.height - (media.height * (91 / 100)),
-                  ),
-                  CustomDefaultButton(
-                    onPressed: () {
-                      print("media height ${media.height}");
-                      print("media width ${media.width}");
-                    },
-                    color: Colors.black38,
-                    text: 'Choose Test',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                    width: media.width - (media.width * (25 / 100)),
-                    radius: media.width - (media.width * (95 / 100)),
-                    height: media.height - (media.height * (92 / 100)),
-                    textColor: Colors.white,
-                  ),
-                ],
-              ),
-            )),
+        child: SingleChildScrollView(
+          child: Container(
+              width: media.width,
+              height: media.height,
+              color: Colors.white,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: media.width - (media.width - 20),
+                    vertical: media.width - (media.width - 20)),
+                child: Column(
+                  children: [
+                    searchDelegate(context),
+                    SizedBox(
+                      height: media.height - (media.height * (95 / 100)),
+                    ),
+                    carouselSlider(context, images),
+                    SizedBox(
+                      height: media.height - (media.height * (91 / 100)),
+                    ),
+                    CustomDefaultButton(
+                      onPressed: () {
+
+                      },
+                      color: Colors.black38,
+                      text: 'Choose Test',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                      width: media.width - (media.width * (25 / 100)),
+                      radius: media.width - (media.width * (95 / 100)),
+                      height: media.height - (media.height * (92 / 100)),
+                      textColor: Colors.white,
+                    ),
+                  ],
+                ),
+              )),
+        ),
       ),
     );
   }
