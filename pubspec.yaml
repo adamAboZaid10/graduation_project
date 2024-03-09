@@ -41,9 +41,10 @@ dependencies:
   flutter_svg: ^2.0.9
   get: ^4.6.6
   shared_preferences: ^2.2.2
-  firebase_core: ^2.25.4
   carousel_slider: ^4.2.1
   image_picker: ^1.0.7
+  line_awesome_flutter: ^2.0.0
+  flutter_switch: ^0.3.2
 
 
 dev_dependencies:

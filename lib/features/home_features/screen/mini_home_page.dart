@@ -5,7 +5,7 @@ import 'package:graduation_final_project/features/home_features/screen/profile_s
 import '../widgets/search_delegate.dart';
 import '../widgets/tab_bar_view.dart';
 import 'chat_screen.dart';
-import 'notification_screen.dart';
+import 'setting_screen.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -22,7 +22,7 @@ class _MainTabViewState extends State<MainTabView> {
     const HomePage(),
     const ChatScreen(),
     const ProfileScreen(),
-    const NotificationScreen()
+    const SettingsScreen()
   ];
   @override
   Widget build(BuildContext context) {

@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/component/default_text_from_filed.dart';
 
-class CustomEmailWidget extends StatelessWidget {
-  CustomEmailWidget({super.key});
-  var emailController = TextEditingController();
+class CustomEmaiEditlWidget extends StatelessWidget {
+  CustomEmaiEditlWidget({super.key});
+  var emaileditController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +21,7 @@ class CustomEmailWidget extends StatelessWidget {
         ),
         CustomDefaultTextFormField(
           prefix: Icons.alternate_email,
-          controller: emailController,
+          controller: emaileditController,
           type: TextInputType.emailAddress,
           validator: (value) {},
           hintText: "adam@gmail.com",
