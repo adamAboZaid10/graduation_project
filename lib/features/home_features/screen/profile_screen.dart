@@ -14,142 +14,140 @@ class ProfileScreen extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: height * 0.1),
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    SizedBox(
-                        width: width * .3,
-                        height: height * .13,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(300),
-                          child: const Image(
-                            image: AssetImage('assets/image/profile.png'),
-                          ),
-                        )),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        width: width * 0.065,
-                        height: height * .03,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: primaryColor,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: height * 0.1),
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  SizedBox(
+                      width: width * .3,
+                      height: height * .13,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(300),
+                        child: const Image(
+                          image: AssetImage('assets/image/profile.png'),
                         ),
-                        child: Icon(
-                          LineAwesomeIcons.alternate_pencil,
-                          color: whitecolor,
-                        ),
+                      )),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      width: width * 0.065,
+                      height: height * .03,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppColor.primaryColor,
                       ),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: height * 0.02),
-                  child: Text(
-                    "profile name",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: blackcolor),
-                  ),
-                ),
-                Text(
-                  "profile_email@gamil.com",
-                  style: TextStyle(fontSize: 15, color: blackcolor),
-                ),
-                SizedBox(
-                  width: width * .4,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: height * 0.025),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => EditProfile()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: primaryColor),
-                      child: Text(
-                        "Edit Profile",
-                        style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                            color: whitecolor),
+                      child: const Icon(
+                        LineAwesomeIcons.alternate_pencil,
+                        color: AppColor.whiteColor,
                       ),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: height * 0.02),
+                child: const Text(
+                  "profile name",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.blackColor),
+                ),
+              ),
+              const Text(
+                "profile_email@gamil.com",
+                style: TextStyle(fontSize: 15, color: AppColor.blackColor),
+              ),
+              SizedBox(
+                width: width * .4,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: height * 0.025),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => EditProfile()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColor.primaryColor),
+                    child: const Text(
+                      "Edit Profile",
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: AppColor.whiteColor),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                  child: const Divider(),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                child: const Divider(),
+              ),
+              SettingMenu(
+                titel: "Settings",
+                endicon: true,
+                icon: const Icon(
+                  LineAwesomeIcons.cog,
+                  color: AppColor.whiteColor,
                 ),
-                SettingMenu(
-                  titel: "Settings",
-                  endicon: true,
-                  icon: Icon(
-                    LineAwesomeIcons.cog,
-                    color: whitecolor,
-                  ),
-                  onTap: () {},
-                  titlecolor: blackcolor,
-                  backiconcolor: const Color.fromARGB(255, 7, 135, 255),
+                onTap: () {},
+                titlecolor: AppColor.blackColor,
+                backiconcolor: const Color.fromARGB(255, 7, 135, 255),
+              ),
+              SettingMenu(
+                endicon: true,
+                titel: "User Management",
+                icon: const Icon(
+                  LineAwesomeIcons.user_check,
+                  color: AppColor.whiteColor,
                 ),
-                SettingMenu(
-                  endicon: true,
-                  titel: "User Management",
-                  icon: Icon(
-                    LineAwesomeIcons.user_check,
-                    color: whitecolor,
-                  ),
-                  onTap: () {},
-                  titlecolor: blackcolor,
-                  backiconcolor: const Color.fromARGB(255, 255, 164, 7),
+                onTap: () {},
+                titlecolor: AppColor.blackColor,
+                backiconcolor: const Color.fromARGB(255, 255, 164, 7),
+              ),
+              SettingMenu(
+                endicon: true,
+                titel: "Uploaded analysis",
+                icon: const Icon(
+                  LineAwesomeIcons.upload,
+                  color: AppColor.whiteColor,
                 ),
-                SettingMenu(
-                  endicon: true,
-                  titel: "Uploaded analysis",
-                  icon: Icon(
-                    LineAwesomeIcons.upload,
-                    color: whitecolor,
-                  ),
-                  onTap: () {},
-                  titlecolor: blackcolor,
-                  backiconcolor: Colors.black,
+                onTap: () {},
+                titlecolor: AppColor.blackColor,
+                backiconcolor: Colors.black,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                child: const Divider(),
+              ),
+              SettingMenu(
+                endicon: true,
+                titel: "Information",
+                icon: const Icon(
+                  LineAwesomeIcons.info,
+                  color: AppColor.whiteColor,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                  child: const Divider(),
+                onTap: () {},
+                titlecolor: AppColor.blackColor,
+                backiconcolor: AppColor.moveColor,
+              ),
+              SettingMenu(
+                endicon: false,
+                titel: "Logout",
+                icon: const Icon(
+                  LineAwesomeIcons.alternate_sign_out,
+                  color: AppColor.whiteColor,
                 ),
-                SettingMenu(
-                  endicon: true,
-                  titel: "Information",
-                  icon: Icon(
-                    LineAwesomeIcons.info,
-                    color: whitecolor,
-                  ),
-                  onTap: () {},
-                  titlecolor: blackcolor,
-                  backiconcolor: Color.fromARGB(255, 237, 9, 199),
-                ),
-                SettingMenu(
-                  endicon: false,
-                  titel: "Logout",
-                  icon: Icon(
-                    LineAwesomeIcons.alternate_sign_out,
-                    color: whitecolor,
-                  ),
-                  onTap: () {},
-                  titlecolor: const Color.fromARGB(255, 246, 37, 22),
-                  backiconcolor: Color.fromARGB(255, 255, 0, 0),
-                ),
-              ],
-            ),
+                onTap: () {},
+                titlecolor: AppColor.redColor,
+                backiconcolor:AppColor.redColor,
+              ),
+            ],
           ),
         ),
       ),

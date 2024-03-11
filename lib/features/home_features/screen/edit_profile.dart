@@ -31,8 +31,7 @@ class _EditProfileState extends State<EditProfile> {
         child: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: width * .08, vertical: height * .06),
-          child: Container(
-              child: Column(
+          child: Column(
             children: [
               Stack(
                 children: [
@@ -53,11 +52,11 @@ class _EditProfileState extends State<EditProfile> {
                       height: height * .03,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: primaryColor,
+                        color: AppColor.primaryColor,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         LineAwesomeIcons.camera,
-                        color: whitecolor,
+                        color: AppColor.whiteColor,
                       ),
                     ),
                   )
@@ -85,14 +84,14 @@ class _EditProfileState extends State<EditProfile> {
                     width: double.infinity,
                     textColor: Colors.white,
                     onPressed: () {},
-                    color: primaryColor,
+                    color: AppColor.primaryColor,
                     text: 'Login'),
               ),
               SizedBox(
                 height: 40.h,
               ),
             ],
-          )),
+          ),
         ),
       ),
     );

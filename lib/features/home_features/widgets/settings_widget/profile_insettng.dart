@@ -23,27 +23,27 @@ class _DarkModeState extends State<IamgeProfile> {
       child: ListTile(
         contentPadding: EdgeInsets.zero, // Added to remove default padding
         onTap: () {},
-        title: Container(
+        title: SizedBox(
           width: width * 0.6, // Adjust the width as needed
-          child: Text(
+          child: const Text(
             "Dark Mode",
             style: TextStyle(
-              color: blackcolor,
+              color: AppColor.blackColor,
               fontSize: 15,
               fontWeight: FontWeight.w600,
             ),
           ),
         ),
-        trailing: Container(
+        trailing:  Container(
           width: width * 0.075,
           height: height * .035,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: secondcolor,
+            color: AppColor.secondColor,
           ),
-          child: Icon(
+          child: const Icon(
             LineAwesomeIcons.angle_right,
-            color: whitecolor,
+            color: AppColor.whiteColor,
           ),
         ),
       ),

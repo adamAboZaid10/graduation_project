@@ -27,23 +27,23 @@ class _DarkModeState extends State<DarkMode> {
           height: height * .035,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: Color.fromARGB(255, 135, 7, 255),
+            color: const Color.fromARGB(255, 135, 7, 255),
           ),
-          child: Icon(
+          child:  const Icon(
             LineAwesomeIcons.moon,
-            color: whitecolor,
+            color: AppColor.whiteColor,
           ),
         ),
-        title: Text("Dark Mode",
+        title: const Text("Dark Mode",
             style: TextStyle(
-                color: blackcolor, fontSize: 15, fontWeight: FontWeight.w600)),
+                color: AppColor.blackColor, fontSize: 15, fontWeight: FontWeight.w600)),
         trailing: SizedBox(
           width: width * .12, // Adjust the width as needed
           child: FlutterSwitch(
             width: width * .3,
             height: height * .03,
             value: status,
-            activeColor: primaryColor,
+            activeColor: AppColor.primaryColor,
             inactiveColor: Colors.black38,
             onToggle: (val) {
               setState(() {

@@ -27,7 +27,7 @@ class ContinueBottonOnboarding extends GetView<OnBoardingControllerIMP> {
               onPressed: () {
                 controller.next();
               },
-              color: primaryColor,
+              color: AppColor.primaryColor,
               child: const Text(
                 "Continue",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),

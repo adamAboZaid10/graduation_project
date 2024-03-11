@@ -45,11 +45,11 @@ class SettingMenu extends StatelessWidget {
                 height: height * .035,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
-                  color: secondcolor,
+                  color: AppColor.secondColor,
                 ),
-                child: Icon(
+                child: const Icon(
                   LineAwesomeIcons.angle_right,
-                  color: whitecolor,
+                  color: AppColor.whiteColor,
                 ),
               )
             : null,

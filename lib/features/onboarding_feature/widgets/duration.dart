@@ -27,8 +27,8 @@ class _DurationOnBoardingState extends State<DurationOnBoarding> {
                           height: 6,
                           decoration: BoxDecoration(
                               color: controller.currentpage != index
-                                  ? secondcolor
-                                  : primaryColor,
+                                  ? AppColor.secondColor
+                                  : AppColor.primaryColor,
                               borderRadius: BorderRadius.circular(10)),
                         ))
               ],

@@ -15,7 +15,7 @@ class IllnessScreenBody extends StatelessWidget {
       var cubit = HomeControllerCubit().get(context);
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children:[
           Center(
             child: SizedBox(
               width: 300.w,

@@ -20,7 +20,7 @@ class Onboarding extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             height: height * 0.1,
             width: double.infinity,
-            color: primaryColor,
+            color: AppColor.primaryColor,
             child: Container(
               height: 15,
               decoration: BoxDecoration(
