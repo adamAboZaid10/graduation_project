@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:graduation_final_project/features/auth_feature/screen/login_screen.dart';
 
 import 'features/home_features/screen/mini_home_page.dart';
 
@@ -22,8 +21,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        // home: const Onboarding(),
-        home: const LoginScreen(),
+        // home:  Onboarding(),
+        home: const MainTabView(),
       ),
     );
   }

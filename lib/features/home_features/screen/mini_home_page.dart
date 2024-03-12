@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:graduation_final_project/features/home_features/screen/home_page.dart';
 import 'package:graduation_final_project/features/home_features/screen/profile_screen.dart';
 
-import '../widgets/search_delegate.dart';
 import '../widgets/tab_bar_view.dart';
 import 'chat_screen.dart';
 import 'setting_screen.dart';
@@ -20,7 +19,7 @@ class _MainTabViewState extends State<MainTabView> {
   Color color = Colors.red;
   List<Widget> widgets = [
     const HomePage(),
-    const ChatScreen(),
+    ChatScreen(),
     const ProfileScreen(),
     const SettingsScreen()
   ];
@@ -28,7 +27,7 @@ class _MainTabViewState extends State<MainTabView> {
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
     return Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        /*floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: InkWell(
           onTap: () {
             showSearch(context: context, delegate: SearchData());
@@ -42,10 +41,10 @@ class _MainTabViewState extends State<MainTabView> {
             child: const Icon(
               Icons.search,
               color: Colors.white,
-              size: 35,
+              size: 30,
             ),
           ),
-        ),
+        ),*/
         bottomNavigationBar: BottomAppBar(
           color: Colors.grey.withOpacity(0.5),
           height: kToolbarHeight,
