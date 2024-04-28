@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/component/custom_default_button.dart';
+import '../../../../core/constant/color.dart';
 
 class ShowDialogImage extends StatelessWidget {
   const ShowDialogImage({
@@ -57,7 +58,7 @@ class ShowDialogImage extends StatelessWidget {
               Center(
                 child: CustomDefaultButton(
                   onPressed: galleryOnTap,
-                  color: Colors.black38,
+                  color:AppColor.blueWhiteColor,
                   text: 'Gallery',
                   fontWeight: FontWeight.bold,
                   fontSize: 15.sp,
@@ -71,7 +72,7 @@ class ShowDialogImage extends StatelessWidget {
               Center(
                 child: CustomDefaultButton(
                   onPressed: cameraOnTap,
-                  color: Colors.black38,
+                  color:AppColor.blueWhiteColor,
                   text: 'Camera',
                   fontWeight: FontWeight.bold,
                   fontSize: 15.sp,

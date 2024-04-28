@@ -71,7 +71,7 @@ class RegisterScreenBody extends StatelessWidget {
 
                   }
                 },
-                color: AppColor.primaryColor,
+                color: AppColor.blueWhiteColor,
                 text: 'Register',
               ),
               CustomRegisterNow(

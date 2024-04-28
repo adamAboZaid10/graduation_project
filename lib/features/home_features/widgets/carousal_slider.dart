@@ -26,7 +26,7 @@ Widget carouselSlider(BuildContext context, List images) {
             width: MediaQuery.of(context).size.width,
             margin: EdgeInsets.symmetric(horizontal: media.width * 0.03),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15), color: Colors.black45),
+                borderRadius: BorderRadius.circular(15), color: Colors.grey.shade400 ),
             child: Image.asset(
               e,
               fit: BoxFit.contain,

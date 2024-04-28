@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/screen/choose_test_screen.dart';
 
 import '../../../core/component/custom_default_button.dart';
@@ -14,7 +16,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List images = [
-    "assets/image/facebooklogo.png",
     "assets/image/onboarding1.jpg",
     "assets/image/onboarding2.jpg",
     "assets/image/onboarding3.jpg",
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Container(
               width: media.width,
               height: media.height,
@@ -49,15 +51,16 @@ class _HomePageState extends State<HomePage> {
                     CustomDefaultButton(
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const ChooseTestScreen()));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ChooseTestScreen(),
+                          ),
+                        );
                       },
-                      color: Colors.black38,
+                      color: AppColor.blueWhiteColor,
                       text: 'Choose Test',
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: 28.sp,
                       width: media.width - (media.width * (25 / 100)),
                       radius: media.width - (media.width * (95 / 100)),
                       height: media.height - (media.height * (92 / 100)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 
 import 'search_delegate.dart';
 
@@ -8,7 +9,7 @@ Widget searchDelegate(BuildContext context) {
     height: media.height - (media.height * (93 / 100)),
     width: media.width * (68 / 100),
     decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(0.5),
+        color:AppColor.blueWhiteColor,
         borderRadius:
             BorderRadius.circular(media.width - (media.width * (85 / 100)))),
     child: Row(

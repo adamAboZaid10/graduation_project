@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/core/component/screen_title.dart';
+import 'package:graduation_final_project/core/constant/color.dart';
 import '../../../core/component/custom_default_button.dart';
 import 'illness_screen.dart';
 
@@ -43,7 +44,7 @@ class CustomChooseScreenBody extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => const IllnessScreen()));
             },
-            color: Colors.black38,
+            color: AppColor.blueWhiteColor,
             text: 'First Illness',
             fontWeight: FontWeight.bold,
             fontSize: 28,
@@ -57,7 +58,7 @@ class CustomChooseScreenBody extends StatelessWidget {
           ),
           CustomDefaultButton(
             onPressed: () {},
-            color: Colors.black38,
+            color: AppColor.blueWhiteColor,
             text: 'Second Illness',
             fontWeight: FontWeight.bold,
             fontSize: 28,
@@ -71,7 +72,7 @@ class CustomChooseScreenBody extends StatelessWidget {
           ),
           CustomDefaultButton(
             onPressed: () {},
-            color: Colors.black38,
+            color: AppColor.blueWhiteColor,
             text: 'Third Illness',
             fontWeight: FontWeight.bold,
             fontSize: 28,

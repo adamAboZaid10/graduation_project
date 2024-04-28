@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/features/home_features/widgets/illness_widgets/show_dialog_image.dart';
 import '../../../../core/component/custom_default_button.dart';
 import '../../../../core/constant/assets_data.dart';
+import '../../../../core/constant/color.dart';
 import '../../controller/home_controller_cubit.dart';
 
 class IllnessScreenBody extends StatelessWidget {
@@ -65,7 +66,7 @@ class IllnessScreenBody extends StatelessWidget {
                         },
                       ));
             },
-            color: Colors.black38,
+            color: AppColor.blueWhiteColor,
             text: cubit.selectedImage == null ? 'Choose Image' : 'Change Image',
             fontWeight: FontWeight.bold,
             fontSize: 28.sp,
@@ -81,7 +82,7 @@ class IllnessScreenBody extends StatelessWidget {
                   onPressed: () {
                     /// Add the method of analysis model Here to analysis the image
                   },
-                  color: Colors.black38,
+                  color: AppColor.blueWhiteColor,
                   text: 'Done',
                   fontWeight: FontWeight.bold,
                   fontSize: 28.sp,
