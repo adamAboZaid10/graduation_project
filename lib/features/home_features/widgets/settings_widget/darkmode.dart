@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -26,17 +27,19 @@ class _DarkModeState extends State<DarkMode> {
           width: width * 0.075,
           height: height * .035,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(100.r),
             color: const Color.fromARGB(255, 135, 7, 255),
           ),
-          child:  const Icon(
+          child: const Icon(
             LineAwesomeIcons.moon,
             color: AppColor.whiteColor,
           ),
         ),
-        title: const Text("Dark Mode",
+        title: Text("Dark Mode",
             style: TextStyle(
-                color: AppColor.blackColor, fontSize: 15, fontWeight: FontWeight.w600)),
+                color: AppColor.blackColor,
+                fontSize: 14.h,
+                fontWeight: FontWeight.w600)),
         trailing: SizedBox(
           width: width * .12, // Adjust the width as needed
           child: FlutterSwitch(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -31,20 +32,22 @@ class SettingMenu extends StatelessWidget {
           width: width * 0.075,
           height: height * .035,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
+            borderRadius: BorderRadius.circular(100.r),
             color: backiconcolor,
           ),
           child: icon,
         ),
         title: Text(titel,
             style: TextStyle(
-                color: titlecolor, fontSize: 15, fontWeight: FontWeight.w600)),
+                color: titlecolor,
+                fontSize: 13.h,
+                fontWeight: FontWeight.w600)),
         trailing: endicon
             ? Container(
                 width: width * 0.075,
                 height: height * .035,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
+                  borderRadius: BorderRadius.circular(100.r),
                   color: AppColor.secondColor,
                 ),
                 child: const Icon(

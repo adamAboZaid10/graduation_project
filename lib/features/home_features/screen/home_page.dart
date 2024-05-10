@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/screen/choose_test_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/component/custom_default_button.dart';
 import '../widgets/carousal_slider.dart';
@@ -49,7 +50,16 @@ class _HomePageState extends State<HomePage> {
                       height: media.height - (media.height * (91 / 100)),
                     ),
                     CustomDefaultButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        String userId = prefs.getString("id") ?? "";
+                        String name = prefs.getString("name") ?? "";
+                        String email = prefs.getString("email") ?? "";
+                        print(userId);
+                        print(name);
+                        print(email);
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(

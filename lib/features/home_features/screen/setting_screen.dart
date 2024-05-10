@@ -4,7 +4,6 @@ import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/darkmode.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/dropdown_city.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/dropdown_lang.dart';
-import 'package:graduation_final_project/features/home_features/widgets/settings_widget/profile_insettng.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/settings_list.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -32,7 +31,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                     width: width * .3,
                     height: height * .13,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(300),
+                      borderRadius: BorderRadius.circular(300.r),
                       child: const Image(
                         image: AssetImage('assets/image/profile.png'),
                       ),
@@ -45,9 +44,9 @@ class _SettingScreenState extends State<SettingsScreen> {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.only(bottom: height * 0.012),
-                    child: const Text(
+                    child: Text(
                       "General",
-                      style: TextStyle(fontSize: 13),
+                      style: TextStyle(fontSize: 13.h),
                     ),
                   ),
                 ),
@@ -58,17 +57,17 @@ class _SettingScreenState extends State<SettingsScreen> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.079),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "Language",
                       style: TextStyle(
                           color: AppColor.blackColor,
-                          fontSize: 15,
+                          fontSize: 14.h,
                           fontWeight: FontWeight.w600),
                     ),
-                    DropDownLang(),
+                    const DropDownLang(),
                   ],
                 ),
               ),
@@ -81,10 +80,10 @@ class _SettingScreenState extends State<SettingsScreen> {
                       "City",
                       style: TextStyle(
                           color: AppColor.blackColor,
-                          fontSize: 15.sp,
+                          fontSize: 14.h,
                           fontWeight: FontWeight.w600),
                     ),
-                    DropDownCity(),
+                    const DropDownCity(),
                   ],
                 ),
               ),
@@ -92,7 +91,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                 endicon: false,
                 titel: "Logout",
                 onTap: () {},
-                icon: Icon(
+                icon: const Icon(
                   LineAwesomeIcons.alternate_sign_out,
                   color: AppColor.whiteColor,
                 ),
@@ -103,7 +102,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                 endicon: false,
                 titel: "Delete Account",
                 onTap: () {},
-                icon: Icon(
+                icon: const Icon(
                   LineAwesomeIcons.alternate_trash,
                   color: AppColor.whiteColor,
                 ),
@@ -118,7 +117,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                     padding: EdgeInsets.only(bottom: height * 0.012),
                     child: Text(
                       "Feedback",
-                      style: TextStyle(fontSize: 13),
+                      style: TextStyle(fontSize: 13.h),
                     ),
                   ),
                 ),
@@ -131,7 +130,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                 endicon: false,
                 titel: "Report",
                 onTap: () {},
-                icon: Icon(
+                icon: const Icon(
                   LineAwesomeIcons.bug,
                   color: AppColor.whiteColor,
                 ),
@@ -142,7 +141,7 @@ class _SettingScreenState extends State<SettingsScreen> {
                 endicon: false,
                 titel: "Send Feedback",
                 onTap: () {},
-                icon: Icon(
+                icon: const Icon(
                   LineAwesomeIcons.thumbs_up,
                   color: AppColor.whiteColor,
                 ),

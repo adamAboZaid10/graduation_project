@@ -8,10 +8,10 @@ class DropDownLang extends StatefulWidget {
 }
 
 class _DropDownLangState extends State<DropDownLang> {
-  String dropdownvalue = 'English     ';
+  String dropdownvalue = 'English';
 
   var items = [
-    'English     ',
+    'English',
     'Arabic',
   ];
   @override
