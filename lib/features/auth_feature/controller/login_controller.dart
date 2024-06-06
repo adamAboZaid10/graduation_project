@@ -53,6 +53,8 @@ class LoginControllerImp extends LoginController {
           String name = prefs.getString("name")!;
           await prefs.setString("email", response["data"]["email"].toString());
           String email = prefs.getString("email")!;
+          await prefs.setString("token", response["data"]["token"].toString());
+          String token = prefs.getString("token")!;
         } else {
           Get.defaultDialog(
               title: "Worning",

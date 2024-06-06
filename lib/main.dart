@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:graduation_final_project/core/constant/approutes.dart';
 import 'package:graduation_final_project/features/auth_feature/screen/login_screen.dart';
-import 'package:graduation_final_project/features/auth_feature/screen/register_screen.dart';
-import 'package:graduation_final_project/features/home_features/screen/home_page.dart';
 import 'package:graduation_final_project/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,7 +17,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final bool isLoggedIn;
 
-  const MyApp({Key? key, required this.isLoggedIn});
+  const MyApp({Key? key, this.isLoggedIn = false});
 
   @override
   Widget build(BuildContext context) {

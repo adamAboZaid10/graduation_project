@@ -2,13 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/features/home_features/widgets/illness_widgets/show_dialog_image.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../../../core/component/custom_default_button.dart';
 import '../../../../core/constant/assets_data.dart';
 import '../../../../core/constant/color.dart';
 import '../../controller/home_controller_cubit.dart';
 
-class IllnessScreenBody extends StatelessWidget {
+class IllnessScreenBody extends StatefulWidget {
   const IllnessScreenBody({super.key});
+
+  @override
+  State<IllnessScreenBody> createState() => _IllnessScreenBodyState();
+}
+
+class _IllnessScreenBodyState extends State<IllnessScreenBody> {
+  String token = '';
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  void loadData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    token = prefs.getString("token") ?? "";
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeControllerCubit, HomeControllerState>(
@@ -16,7 +38,7 @@ class IllnessScreenBody extends StatelessWidget {
       var cubit = HomeControllerCubit().get(context);
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children:[
+        children: [
           Center(
             child: SizedBox(
               width: 300.w,
@@ -80,7 +102,8 @@ class IllnessScreenBody extends StatelessWidget {
               ? Container()
               : CustomDefaultButton(
                   onPressed: () {
-                    /// Add the method of analysis model Here to analysis the image
+                    cubit.postIllnessData(
+                        imagePath: cubit.selectedImage!, token: token);
                   },
                   color: AppColor.blueWhiteColor,
                   text: 'Done',
