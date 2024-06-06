@@ -47,8 +47,9 @@ class HomeControllerCubit extends Cubit<HomeControllerState> {
   }
 
   Dio dio = Dio();
-
+ String result="";
   Future<void> postIllnessData({String? token, required File imagePath}) async {
+    emit(UploadImageLoadingState());
     try {
       dio.options.headers = {
         "Authorization": "Bearer ${token ?? ""}",
@@ -64,12 +65,15 @@ class HomeControllerCubit extends Cubit<HomeControllerState> {
           data: formData);
       if (response.statusCode == 200) {
         print("image uploaded successfully");
+        result = response.data['commandResult'];
+        emit(UploadImageSuccessState());
         print("############## ${response.statusMessage}");
         print("############## ${response.data}");
       } else {
         print("################### Error #################");
       }
     } catch (e) {
+      emit(UploadImageErrorState(e.toString()));
       print("@@@@@@@@@@@@@@@@@@ $e #@@@@@@@@@@@@@@@@@@@@@");
     }
   }

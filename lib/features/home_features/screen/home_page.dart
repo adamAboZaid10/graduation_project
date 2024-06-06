@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                         );
                       },
                       color: AppColor.blueWhiteColor,
-                      text: 'Choose Test',
+                      text: 'Patient Test',
                       fontWeight: FontWeight.bold,
                       fontSize: 28.sp,
                       width: media.width - (media.width * (25 / 100)),
