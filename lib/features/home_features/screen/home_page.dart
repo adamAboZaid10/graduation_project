@@ -17,10 +17,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List images = [
-    "assets/image/onboarding1.jpg",
-    "assets/image/onboarding2.jpg",
+    "assets/image/ckd_image.webp",
     "assets/image/onboarding3.jpg",
-    "assets/image/onboarding4.jpg"
+    "assets/image/liver.jpeg",
   ];
 
   @override

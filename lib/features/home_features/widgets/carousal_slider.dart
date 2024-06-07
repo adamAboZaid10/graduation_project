@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget carouselSlider(BuildContext context, List images) {
   Size media = MediaQuery.of(context).size;
@@ -29,9 +30,9 @@ Widget carouselSlider(BuildContext context, List images) {
                 borderRadius: BorderRadius.circular(15), color: Colors.grey.shade400 ),
             child: Image.asset(
               e,
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
               width: double.infinity,
-              height: double.maxFinite,
+              height:200.h,
             ),
           );
         },
