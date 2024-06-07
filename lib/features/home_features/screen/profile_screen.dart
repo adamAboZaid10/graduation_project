@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/screen/edit_profile.dart';
+import 'package:graduation_final_project/features/home_features/screen/patient_history.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/settings_list.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -136,12 +137,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SettingMenu(
                 endicon: true,
-                titel: "Uploaded analysis",
+                titel: "Patient History",
                 icon: const Icon(
                   LineAwesomeIcons.upload,
                   color: AppColor.whiteColor,
                 ),
-                onTap: () {},
+                onTap: ()
+                {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PatientHistory(),
+                    ),);
+                },
                 titlecolor: AppColor.blackColor,
                 backiconcolor: Colors.black,
               ),

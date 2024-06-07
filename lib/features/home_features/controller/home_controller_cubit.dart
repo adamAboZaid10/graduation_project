@@ -9,7 +9,13 @@ part 'home_controller_state.dart';
 class HomeControllerCubit extends Cubit<HomeControllerState> {
   HomeControllerCubit() : super(HomeControllerInitial());
 
-  HomeControllerCubit get(context) => BlocProvider.of(context);
+  static HomeControllerCubit get(context) => BlocProvider.of(context);
+
+
+int index = 0;
+  void bottomNavBar( index) {
+    emit(BottomNavBarState(index));
+  }
 
   File? selectedImage;
   final picker = ImagePicker();

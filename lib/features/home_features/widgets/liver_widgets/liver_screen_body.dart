@@ -34,7 +34,7 @@ class _LiverBodyState extends State<LiverBody> {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeControllerCubit, HomeControllerState>(
       builder: (context, state) {
-        var cubit = HomeControllerCubit().get(context);
+        var cubit = HomeControllerCubit.get(context);
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -19,6 +19,11 @@ class SelectedImageErrorState extends HomeControllerState {
 }
 
 class UploadImageLoadingState extends HomeControllerState {}
+class BottomNavBarState extends HomeControllerState {
+
+  int index;
+  BottomNavBarState(this.index);
+}
 
 class UploadImageSuccessState extends HomeControllerState {}
 
