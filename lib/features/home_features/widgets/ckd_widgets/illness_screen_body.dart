@@ -16,21 +16,23 @@ class CKDBody extends StatefulWidget {
 }
 
 class _CKDBodyState extends State<CKDBody> {
-  String token = '';
-
+  String? token;
   @override
   void initState() {
     super.initState();
-    loadData();
+    setState(() {
+      loadData();
+    });
   }
 
   void loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    token = prefs.getString("token") ?? "";
-    setState(() {});
+    setState(() {
+      token = prefs.getString("token") ?? "";
+    });
+    print("@@@@@@@@@@@@@@@@@@@ $token");
   }
 
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeControllerCubit, HomeControllerState>(
         builder: (context, state) {
@@ -148,10 +150,13 @@ class _CKDBodyState extends State<CKDBody> {
                     )
                   : CustomDefaultButton(
                       onPressed: () {
-                        cubit.postIllnessData(
-                          imagePath: cubit.selectedImage!,
-                          token: token,
-                        );
+                        setState(() {
+                          cubit.postIllnessData(
+                            imagePath: cubit.selectedImage!,
+                            token: token,
+                          );
+                        });
+                        print("############# $token #################");
                       },
                       color: AppColor.blueWhiteColor,
                       text: 'Show Result',
