@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:graduation_final_project/core/constant/approutes.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/screen/edit_profile.dart';
 import 'package:graduation_final_project/features/home_features/screen/patient_history.dart';
@@ -137,18 +139,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SettingMenu(
                 endicon: true,
-                titel: "Patient History",
+                titel: "Uploaded analysis",
                 icon: const Icon(
                   LineAwesomeIcons.upload,
                   color: AppColor.whiteColor,
                 ),
-                onTap: ()
-                {
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const PatientHistory(),
-                    ),);
+                    ),
+                  );
                 },
                 titlecolor: AppColor.blackColor,
                 backiconcolor: Colors.black,
@@ -164,7 +166,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   LineAwesomeIcons.info,
                   color: AppColor.whiteColor,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.InformathionPage);
+                },
                 titlecolor: AppColor.blackColor,
                 backiconcolor: AppColor.moveColor,
               ),
@@ -175,7 +179,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   LineAwesomeIcons.alternate_sign_out,
                   color: AppColor.whiteColor,
                 ),
-                onTap: () {},
+                onTap: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.setBool('isLoggedIn', false);
+                  Get.offAndToNamed("/LoginScreen");
+                },
                 titlecolor: AppColor.redColor,
                 backiconcolor: AppColor.redColor,
               ),

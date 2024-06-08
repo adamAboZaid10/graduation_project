@@ -10,22 +10,20 @@ class CustomNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children:
-      [
+      children: [
         Text(
           'Name',
-          style:Theme.of(context).textTheme.headline6!.copyWith(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey
-          ) ,
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
         ),
-        SizedBox(height: 10.h,),
+        SizedBox(
+          height: 10.h,
+        ),
         CustomDefaultTextFormField(
           controller: nameController,
           type: TextInputType.emailAddress,
-          validator: (value){
-            if(value!.isEmpty){
+          validator: (value) {
+            if (value!.isEmpty) {
               return 'name must not be empty';
             }
           },

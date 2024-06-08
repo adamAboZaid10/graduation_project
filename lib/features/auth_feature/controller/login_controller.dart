@@ -17,12 +17,16 @@ class LoginControllerImp extends LoginController {
   TextEditingController passwordController = TextEditingController();
 
   StatusRequest? statusRequest = StatusRequest.none;
+
+  LoginControllerImp(this.formKey);
+
+  final GlobalKey<FormState> formKey;
+
   Curd curd = Curd();
 
   LoginData sigupData = LoginData(Get.put(Curd()));
   List data = [];
 
-  GlobalKey<FormState> loginkey = new GlobalKey<FormState>();
   bool display = true;
 
   @override
@@ -32,7 +36,7 @@ class LoginControllerImp extends LoginController {
 
   @override
   login() async {
-    var formdata = loginkey.currentState;
+    var formdata = formKey.currentState;
     if (formdata!.validate()) {
       formdata.save();
       print("Valid");
@@ -44,20 +48,34 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response["message"] == "Patient login successful") {
-          Get.offNamed("HomePage");
+          Get.offNamed(AppRoutes.MainTabView);
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setBool('isLoggedIn', true);
           await prefs.setString("id", response["data"]["id"].toString());
           String userid = prefs.getString("id")!;
           await prefs.setString("name", response["data"]["name"].toString());
           String name = prefs.getString("name")!;
-          await prefs.setString("email", response["data"]["email"].toString());
-          String email = prefs.getString("email")!;
           await prefs.setString("token", response["data"]["token"].toString());
           String token = prefs.getString("token")!;
+          await prefs.setString("email", response["data"]["email"].toString());
+          String email = prefs.getString("email")!;
+        } else if (response["message"] == "Doctor login successful") {
+          Get.offNamed(AppRoutes.DashbordHomeScreen);
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          await prefs.setBool('isLoggedIndashbord', true);
+          await prefs.setString("id", response["data"]["id"].toString());
+          String userid = prefs.getString("id")!;
+          await prefs.setString("name", response["data"]["name"].toString());
+          String name = prefs.getString("name")!;
+          await prefs.setString("token", response["data"]["token"].toString());
+          String token = prefs.getString("token")!;
+          print(token);
+          await prefs.setString("email", response["data"]["email"].toString());
+          String email = prefs.getString("email")!;
+          print("0987");
         } else {
           Get.defaultDialog(
-              title: "Worning",
+              title: "Warning",
               middleText:
                   "There is no account with this email\n Or the password is incorrect");
         }

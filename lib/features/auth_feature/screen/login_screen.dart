@@ -9,10 +9,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return BlocProvider(
-      create: (BuildContext context) =>AuthCubit(),
-      child:   Scaffold(
-        body: LoginScreenBody(),
+      create: (BuildContext context) => AuthCubit(),
+      child: Scaffold(
+        body: LoginScreenBody(
+          formKey: formKey,
+        ),
       ),
     );
   }

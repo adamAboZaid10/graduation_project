@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
-
-
 class CustomDefaultTextFormField extends StatelessWidget {
   const CustomDefaultTextFormField({
     super.key,
@@ -25,7 +20,6 @@ class CustomDefaultTextFormField extends StatelessWidget {
     required this.backgroundColor,
     required this.hintColor,
     required this.textColor,
-
   });
   final TextEditingController controller;
   final TextInputType type;
@@ -41,9 +35,9 @@ class CustomDefaultTextFormField extends StatelessWidget {
   final GestureTapCallback? prefixPressed;
   final bool obscure;
   final double? radius;
-  final Color backgroundColor ;
-  final Color hintColor ;
-  final Color textColor ;
+  final Color backgroundColor;
+  final Color hintColor;
+  final Color textColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,7 +49,7 @@ class CustomDefaultTextFormField extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: TextFormField(
-          maxLines:maxLine ,
+          maxLines: maxLine,
           controller: controller,
           keyboardType: type,
           onFieldSubmitted: onSubmit,
@@ -63,31 +57,32 @@ class CustomDefaultTextFormField extends StatelessWidget {
           onChanged: onChange,
           validator: validator,
           obscureText: obscure,
-          style:   TextStyle(color: textColor),
+          style: TextStyle(color: textColor),
           decoration: InputDecoration(
-            prefixIcon:  prefix != null
+            prefixIcon: prefix != null
                 ? IconButton(
-              onPressed: prefixPressed,
-              icon: Icon(
-                prefix,
-                color: Theme.of(context).iconTheme.color,
-                size: 16,
-              ),
-            )
+                    onPressed: prefixPressed,
+                    icon: Icon(
+                      prefix,
+                      color: Theme.of(context).iconTheme.color,
+                      size: 16,
+                    ),
+                  )
                 : null,
             hintText: hintText,
-            hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
-              color: hintColor,
-              fontSize: 14,fontWeight: FontWeight.normal,
-            ),
+            hintStyle: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                  color: hintColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                ),
             suffixIcon: suffix != null
                 ? IconButton(
-              onPressed: suffixPressed,
-              icon: Icon(
-                suffix,
-                color: Colors.black,
-              ),
-            )
+                    onPressed: suffixPressed,
+                    icon: Icon(
+                      suffix,
+                      color: Colors.black,
+                    ),
+                  )
                 : null,
           ),
         ),
@@ -96,9 +91,9 @@ class CustomDefaultTextFormField extends StatelessWidget {
   }
 }
 
-
-
-void navigateTo(context , widget) =>  Navigator.push(
-  context,
-  MaterialPageRoute(builder:(context)=> widget ,
-  ),);
+void navigateTo(context, widget) => Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => widget,
+      ),
+    );

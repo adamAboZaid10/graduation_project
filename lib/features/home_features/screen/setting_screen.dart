@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:graduation_final_project/core/constant/approutes.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/darkmode.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/dropdown_city.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/dropdown_lang.dart';
 import 'package:graduation_final_project/features/home_features/widgets/settings_widget/settings_list.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -55,42 +58,15 @@ class _SettingScreenState extends State<SettingsScreen> {
                 padding: EdgeInsets.symmetric(horizontal: width * 0.1),
                 child: const Divider(),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.079),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Language",
-                      style: TextStyle(
-                          color: AppColor.blackColor,
-                          fontSize: 14.h,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    const DropDownLang(),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.079),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "City",
-                      style: TextStyle(
-                          color: AppColor.blackColor,
-                          fontSize: 14.h,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    const DropDownCity(),
-                  ],
-                ),
-              ),
               SettingMenu(
                 endicon: false,
                 titel: "Logout",
-                onTap: () {},
+                onTap: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.setBool('isLoggedIn', false);
+                  Get.offAndToNamed("/LoginScreen");
+                },
                 icon: const Icon(
                   LineAwesomeIcons.alternate_sign_out,
                   color: AppColor.whiteColor,
@@ -101,7 +77,12 @@ class _SettingScreenState extends State<SettingsScreen> {
               SettingMenu(
                 endicon: false,
                 titel: "Delete Account",
-                onTap: () {},
+                onTap: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.setBool('isLoggedIn', false);
+                  Get.offAndToNamed("/LoginScreen");
+                },
                 icon: const Icon(
                   LineAwesomeIcons.alternate_trash,
                   color: AppColor.whiteColor,

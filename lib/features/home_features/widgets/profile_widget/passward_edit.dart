@@ -13,7 +13,7 @@ class CustomPasswordEditWidget extends StatelessWidget {
       children: [
         Text(
           'Password',
-          style: Theme.of(context).textTheme.headline6!.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         SizedBox(

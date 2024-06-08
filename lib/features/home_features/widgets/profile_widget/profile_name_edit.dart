@@ -13,7 +13,7 @@ class CustomNameEditWidget extends StatelessWidget {
       children: [
         Text(
           'Name',
-          style: Theme.of(context).textTheme.headline6!.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         SizedBox(
