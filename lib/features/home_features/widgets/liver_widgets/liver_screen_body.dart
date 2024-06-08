@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/component/custom_default_button.dart';
 import '../../../../core/constant/color.dart';
 import '../../controller/home_controller_cubit.dart';
+import '../../screen/liver_doctor.dart';
 
 class LiverBody extends StatefulWidget {
   const LiverBody({super.key});
@@ -122,7 +123,35 @@ class _LiverBodyState extends State<LiverBody> {
                           ),
                           SizedBox(
                             height: 10.h,
+                          ), Row(
+                            children: [
+                              Text(
+                                'There are Group of Liver Doctors',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15.sp),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                      const LiverDoctors(),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  'Tap Here',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15.sp,
+                                      color: AppColor.blueWhiteColor),
+                                ),
+                              ),
+                            ],
                           ),
+                          SizedBox(height: 20.h,),
                           CustomDefaultButton(
                             onPressed: () {
                               showDialog(
