@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:graduation_final_project/features/auth_feature/screen/login_screen.dart';
 import 'package:graduation_final_project/features/doctordashbord/dashbordhome.dart';
 import 'package:graduation_final_project/features/doctordashbord/doctordashbord.dart';
+import 'package:graduation_final_project/features/home_features/screen/hometest.dart';
 import 'package:graduation_final_project/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     Widget homeScreen;
 
     if (isLoggedIn) {
-      homeScreen = MainTabView();
+      homeScreen = HomeBar();
     } else if (isLoggedIndashbord) {
       homeScreen = DashbordHomeScreen();
     } else {

@@ -58,8 +58,8 @@ class _CKDBodyState extends State<CKDBody> {
                           height: 10.h,
                         ),
                         Image.asset(
-                          'assets/image/ckd_image.webp',
-                          height: 300.h,
+                          'assets/image/kidney.png',
+                          height: 250.h,
                           width: double.infinity,
                         ),
                       ],
@@ -79,7 +79,7 @@ class _CKDBodyState extends State<CKDBody> {
             ),
           ),
           SizedBox(
-            height: 10.h,
+            height: 20.h,
           ),
           state is UploadImageSuccessState
               ? Container()
@@ -104,7 +104,7 @@ class _CKDBodyState extends State<CKDBody> {
                       : 'Change CKD Test',
                   fontWeight: FontWeight.bold,
                   fontSize: 20.sp,
-                  radius: 5.r,
+                  radius: 35.r,
                   textColor: Colors.white,
                 ),
           SizedBox(
@@ -124,7 +124,8 @@ class _CKDBodyState extends State<CKDBody> {
                         ),
                         SizedBox(
                           height: 10.h,
-                        ),  Row(
+                        ),
+                        Row(
                           children: [
                             Text(
                               'There are Group of CKD Doctors',

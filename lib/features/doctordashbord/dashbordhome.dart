@@ -1,56 +1,43 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_final_project/core/constant/color.dart';
 import 'package:graduation_final_project/features/doctordashbord/dashbordprofile.dart';
 import 'package:graduation_final_project/features/doctordashbord/doctordashbord.dart';
 
 class DashbordHomeScreen extends StatefulWidget {
-  const DashbordHomeScreen({super.key});
+  const DashbordHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<DashbordHomeScreen> createState() => _HomeScreenState();
+  State<DashbordHomeScreen> createState() => _HomeBarState();
 }
 
-class _HomeScreenState extends State<DashbordHomeScreen> {
+class _HomeBarState extends State<DashbordHomeScreen> {
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    final items = <Widget>[
-      Icon(
-        Icons.home_rounded,
-        size: 30,
-        color: index == 0
-            ? const Color.fromARGB(255, 122, 122, 122)
-            : const Color.fromARGB(255, 255, 255, 255),
-      ),
-      Icon(
-        Icons.person,
-        size: 30,
-        color: index == 1
-            ? const Color.fromARGB(255, 122, 122, 122)
-            : const Color.fromARGB(255, 255, 255, 255),
-      ),
-    ];
-    final screen = [
+    final List<Widget> screens = [
       const DoctorDashbord(),
-      const DashbordProfilePage(),
+      const DashbordProfilePage()
     ];
+
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        color: AppColor.blueWhiteColor,
-        index: index,
-        height: height * 0.075,
-        backgroundColor: const Color.fromARGB(0, 252, 252, 252),
-        items: items,
-        buttonBackgroundColor: const Color.fromARGB(0, 252, 252, 252),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'Settings'),
+        ],
+        currentIndex: index,
+        selectedItemColor:
+            AppColor.blueWhiteColor, // Make sure AppColor is defined
+        unselectedItemColor: Colors.grey,
         onTap: (index) {
           setState(() {
             this.index = index;
           });
         },
       ),
-      body: screen[index],
+      body: screens[index],
     );
   }
 }

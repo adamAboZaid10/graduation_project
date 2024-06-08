@@ -26,10 +26,6 @@ class InformathionPage extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(
-              "assets/image/info1.png",
-              height: 100.h,
-            ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.h),
               child: Row(
@@ -43,10 +39,6 @@ class InformathionPage extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(
-              "assets/image/info2.png",
-              height: 250.h,
-            ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.h),
               child: Row(
@@ -59,10 +51,6 @@ class InformathionPage extends StatelessWidget {
                           color: const Color.fromARGB(255, 98, 98, 98)))
                 ],
               ),
-            ),
-            Image.asset(
-              "assets/image/info3.png",
-              height: 200.h,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.h),

@@ -56,8 +56,8 @@ class _LiverBodyState extends State<LiverBody> {
                             height: 10.h,
                           ),
                           Image.asset(
-                            'assets/image/liver.jpeg',
-                            height: 250.h,
+                            'assets/image/liver.png',
+                            height: 200.h,
                             // fit: BoxFit.cover,
                             width: double.infinity,
                           ),
@@ -78,7 +78,7 @@ class _LiverBodyState extends State<LiverBody> {
               ),
             ),
             SizedBox(
-              height: 10.h,
+              height: 20.h,
             ),
             state is UploadImageSuccessState
                 ? Container()
@@ -103,7 +103,7 @@ class _LiverBodyState extends State<LiverBody> {
                         : 'Change Liver Test',
                     fontWeight: FontWeight.bold,
                     fontSize: 20.sp,
-                    radius: 5.r,
+                    radius: 35.r,
                     textColor: Colors.white,
                   ),
             SizedBox(
@@ -123,7 +123,8 @@ class _LiverBodyState extends State<LiverBody> {
                           ),
                           SizedBox(
                             height: 10.h,
-                          ), Row(
+                          ),
+                          Row(
                             children: [
                               Text(
                                 'There are Group of Liver Doctors',
@@ -137,7 +138,7 @@ class _LiverBodyState extends State<LiverBody> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                      const LiverDoctors(),
+                                          const LiverDoctors(),
                                     ),
                                   );
                                 },
@@ -151,7 +152,9 @@ class _LiverBodyState extends State<LiverBody> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20.h,),
+                          SizedBox(
+                            height: 20.h,
+                          ),
                           CustomDefaultButton(
                             onPressed: () {
                               showDialog(

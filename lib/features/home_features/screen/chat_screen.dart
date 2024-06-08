@@ -62,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.secondColor,
+        backgroundColor: AppColor.blueWhiteColor,
         centerTitle: true,
         title: Text(
           "Chat",
@@ -88,8 +88,8 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         typingUsers: typing,
         messageOptions: const MessageOptions(
-            containerColor: Colors.black,
-            textColor: Colors.blue,
+            containerColor: Color.fromARGB(255, 231, 231, 231),
+            textColor: Color.fromARGB(255, 0, 0, 0),
             showTime: true),
         currentUser: user,
         onSend: (ChatMessage message) {
