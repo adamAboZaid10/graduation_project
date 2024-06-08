@@ -32,3 +32,8 @@ class UploadImageErrorState extends HomeControllerState {
 
   UploadImageErrorState(this.error);
 }
+
+
+class PatientDataLoadingState extends HomeControllerState{}
+class PatientDataSuccessState extends HomeControllerState{}
+class PatientDataFailedState extends HomeControllerState{}

@@ -116,7 +116,7 @@ class _CKDBodyState extends State<CKDBody> {
                   ? Column(
                       children: [
                         Text(
-                          'Your Result: ${cubit.result}',
+                          'Your Result: ${cubit.result == "NOT CKD" ? "Negative analysis" : "Positive analysis"}',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 15.sp,
@@ -126,29 +126,35 @@ class _CKDBodyState extends State<CKDBody> {
                           height: 10.h,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              'There are Group of CKD Doctors',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 15.sp),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const CkdDoctors(),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                'Tap Here',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 15.sp,
-                                    color: AppColor.blueWhiteColor),
-                              ),
-                            ),
+                            cubit.result == "CKD"
+                                ? Text(
+                                    "Congrats!",
+                                    style: TextStyle(fontSize: 18.sp),
+                                  )
+                                : InkWell(
+                                    onTap: () {
+                                      /*     Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const CkdDoctors(),
+                                        ),
+                                      );*/
+                                      Navigator.of(context).pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                              builder: (_) =>
+                                                  const CkdDoctors()),
+                                          (route) => false);
+                                    },
+                                    child: Text(
+                                      "Visit Doctors",
+                                      style: TextStyle(
+                                          fontSize: 18.sp,
+                                          decoration: TextDecoration.underline,
+                                          decorationThickness: 3),
+                                    )),
                           ],
                         ),
                         SizedBox(
